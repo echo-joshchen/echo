@@ -12,6 +12,9 @@ $(document).ready(function(){
     
 	createMap();
 	//geocodeAddress(0);
+	
+	// Make map div resizable
+	$("#mapresize").resizable();
 });
 
 // Callback function for when a territory file is selected
