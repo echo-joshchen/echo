@@ -25,19 +25,7 @@ function uploadFile(evt)
     {
         var file = evt.target.files[0];
         var reader = new FileReader();
-        reader.onload = function(event) {
-            var csvData = event.target.result;
-            data = $.csv.toArrays(csvData);
-            if (data && data.length > 0) 
-            {
-                //alert('Imported -' + data.length + '- rows.');
-                processGeocodedData();
-            } 
-            else 
-            {
-                alert('No data to import!');
-            }
-        };
+        reader.onload = processCsvData;
         reader.onerror = function() {
             alert('Unable to read ' + file.fileName);
         };
@@ -45,8 +33,24 @@ function uploadFile(evt)
 	}
 }
 
+// Process csv data
+function processCsvData(event)
+{
+    var csvData = event.target.result;
+    data = $.csv.toArrays(csvData);
+    if (data && data.length > 0) 
+    {
+        processGeocodedData();
+        generateMap();
+    } 
+    else 
+    {
+        alert('No data to import!');
+    }
+}
+
 // Process territory data
-function processData()
+function processAddressData()
 {
     for (var i = 1; i < 5; i++)
     {

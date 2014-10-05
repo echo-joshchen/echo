@@ -14,13 +14,17 @@ $(document).ready(function(){
 	//geocodeAddress(0);
 	
 	// Make map div resizable
-	$("#mapresize").resizable();
+	$("#mapResize").resizable();
 });
 
 // Callback function for when a territory file is selected
 function handleTerritory(event)
 {
 	uploadFile(event);
-	//geocodeAddress(0);
+}
+
+// Generate the map
+function generateMap()
+{
 	refreshMap();
 }

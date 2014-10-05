@@ -4,11 +4,15 @@
     margin: .5em;
 }
 
-#mapresize {
-    width: 1200px;
+#mapResize {
+    width: 1500px;
     height: 800px;
     padding: 1em;
     text-align: center;
     margin: 0;
 }
 
+#territoryFile {
+    width: 800px;
+    height: 70px;
+}
