@@ -1,7 +1,7 @@
 var db = null;
 
 $(document).ready(function () {
-    $("#dbfile").change(loadDatabase)
+    $("#dbfile").change(loadDatabase);
 });
 
 // Load database from a user selected file
@@ -18,12 +18,16 @@ function readDbFile(fileReader)
 {
     var Uints = new Uint8Array(fileReader.result);
     db = new SQL.Database(Uints);
+        
+    // Clear existing menu
+    document.getElementById("termenu").innerHTML = "";
     
     // Read out territory names
     var res = db.exec("SELECT tername FROM territory");
     res[0].values.forEach(function(rowData) {
         fillDropDownMenu(rowData);
     });
+    $(".chosen-select").chosen();
     
     $("#termenu").change(createTerritoryTable);
 }

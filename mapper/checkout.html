@@ -5,6 +5,7 @@
     <title>Checkout Territory</title>
   
     <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="scripts/jquery-1.8.1.min.js"></script>
     <script type="text/javascript" src="scripts/sql.js"></script>
     <script type="text/javascript" src="scripts/checkout.js"></script>
@@ -13,9 +14,9 @@
     
     <!-- CSS -->
   <link rel="stylesheet" type="text/css" href="css/checkout.css">
-  <link rel="stylesheet" type="text/css" href="css/chosen.css">
-  <link rel="stylesheet" type="text/css" href="css/prism.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/prism.css">
+  <link rel="stylesheet" type="text/css" href="css/chosen.css">
   
 </head>
 
@@ -23,7 +24,7 @@
 
     <label>Load an SQLite database file: <input type='file' id='dbfile' ></label> <br>
     
-    <select id="termenu" class="chosen-select" style="width:350px;" tabindex="2"></select>
+    <select id="termenu" data-placeholder="Choose a territory..." class="chosen-select" style="width:350px;" tabindex="2"></select>
     
     <table id="tertable"></table>
 
