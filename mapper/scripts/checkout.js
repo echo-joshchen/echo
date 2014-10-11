@@ -75,13 +75,11 @@ function writeTableHeaderRow(rowData)
 function writeTableRow(rowData)
 {
     var table = document.getElementById("tertable");
-    var tableBody = document.createElement('tbody');
     var row = document.createElement('tr');
     rowData.forEach(function(cellData) {
       var cell = document.createElement('td');
       cell.appendChild(document.createTextNode(cellData));
       row.appendChild(cell);
     });
-    tableBody.appendChild(row);
-    table.appendChild(tableBody);
+    table.appendChild(row);
 }
